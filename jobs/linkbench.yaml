@@ -1,0 +1,8 @@
+suite: linkbench
+testcase: linkbench
+category: benchmark
+
+nr_threads: 200%
+setup-linkbench:
+linkbench:
+  requests: 50000

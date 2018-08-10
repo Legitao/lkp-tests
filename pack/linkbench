@@ -1,0 +1,18 @@
+#!/bin/bash
+
+download()
+{
+	git_clone_update https://github.com/facebookarchive/linkbench.git --recursive
+}
+
+build()
+{
+	cd $source_dir || return
+	mvn clean package -P fast-test
+	#mvn clean package -DskipTests
+}
+
+install()
+{
+	cp -af $source_dir /lkp/benchmarks/
+}

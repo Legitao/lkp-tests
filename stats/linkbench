@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+
+LKP_SRC = ENV['LKP_SRC'] || File.dirname(File.dirname(File.realpath($PROGRAM_NAME)))
+
+require "#{LKP_SRC}/lib/statistics.rb"
+
+while (line = STDIN.gets)
+  case line
+  when /\[main\]: (.*) count = (\d+)(.*)max = (\d+).(\d+)ms(.*)mean = (\d+).(\d+)ms/
+    puts $1 + '.count: ' + $2
+    puts $1 + '.max: ' + $4 + '.' + $5
+    puts $1 + '.mean: ' + $7 + '.' + $8
+  when /\[main\]: REQUEST PHASE COMPLETED. (\d+) requests done in (\d+) seconds. Requests\/second = (\d+)/
+    puts 'requests: ' + $1
+    puts 'time: ' + $2
+    puts 'requests/second: ' + $3
+  end
+end

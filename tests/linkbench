@@ -1,0 +1,10 @@
+#!/bin/sh
+# - nr_threads
+# - requests
+
+# create random password
+cd $BENCHMARK_ROOT/linkbench || exit
+echo $nr_threads
+echo $requests
+./bin/linkbench 2>&1 -c config/MyConfig.properties \
+-D host=localhost -D user=linkbench -D password=mypassword -D requesters=$nr_threads -D requests=$requests -r 
