@@ -7,7 +7,6 @@ cp config/LinkConfigMysql.properties config/MyConfig.properties
 RESULT=`mysql -u root --skip-column-names -e "SHOW DATABASES LIKE 'linkdb'"`
 
 if [ "$RESULT" = "linkdb" ]; then
-#todo migrate pack to pkg
     echo "Database exist, skip loading phase"
 else
 

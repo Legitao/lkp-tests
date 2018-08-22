@@ -10,3 +10,4 @@ rt-tests::
 netpipe-lam: netpipe
 eatmem: vm-scalability
 vm-scalability:: 
+linkbench::
